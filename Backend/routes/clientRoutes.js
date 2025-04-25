@@ -16,3 +16,5 @@ router.get('/:id', getClientById); // Get client by ID
 router.post('/', createClient); // Create a new client
 router.put('/:id', updateClient); // Update a client by ID
 router.delete('/:id', deleteClient); // Delete a client by ID
+
+export default router;

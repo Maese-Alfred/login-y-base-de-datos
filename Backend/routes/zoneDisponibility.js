@@ -18,3 +18,5 @@ router.get('/date/:date', getDisponibilityByDate);
 router.get('/zone/:id', getDisponibilityByZoneId);
 router.put('/:id', updateZoneDisponibility);
 router.delete('/:id', deleteZoneDisponibility);
+
+export default router;

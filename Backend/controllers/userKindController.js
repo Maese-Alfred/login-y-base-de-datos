@@ -1,4 +1,4 @@
-import * as UserKind from "../models/userKind.js";
+import * as UserKind from "../models/userKindModel.js";
 
 export const getAllKindUser = async (req, res) => {
   try {

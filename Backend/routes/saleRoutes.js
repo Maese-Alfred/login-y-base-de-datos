@@ -15,3 +15,4 @@ router.get('/', getAllSales);
 router.put('/:id', updateSale);
 router.delete('/:id', deleteSale);
 
+export default router;

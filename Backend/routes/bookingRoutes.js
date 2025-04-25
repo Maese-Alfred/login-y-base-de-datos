@@ -21,3 +21,5 @@ router.get('/:id', getBookingById); // Get booking by ID
 router.post('/', createBooking); // Create a new booking
 router.put('/:id', updateBooking); // Update a booking by ID
 router.delete('/:id', deleteBooking); // Delete a booking by ID
+
+export default router;

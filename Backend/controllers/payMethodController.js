@@ -1,4 +1,4 @@
-import * as PayMethod from '../models/payMethodModel.js';
+import * as PayMethod from '../models/payMethodsModel.js';
 
 export const createPayMethod = async (req, res) => {
     const { tipo } = req.body;

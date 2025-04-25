@@ -18,3 +18,5 @@ router.post('/', createActivity); // Create a new activity
 router.put('/:id', updateActivity); // Update an activity by ID
 router.delete('/:id', deleteActivity); // Delete an activity by ID
 
+export default router;
+

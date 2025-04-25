@@ -16,3 +16,5 @@ router.get('/', getAllKindUser);
 router.get('/:id', getKindUserById);
 router.put('/:id', updateKindUser);
 router.delete('/:id', deleteKindUser);
+
+export default router;

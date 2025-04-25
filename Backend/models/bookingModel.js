@@ -1,7 +1,6 @@
 import db from "../config/db.js";
 const sql = db;
 
-import db from "../config/db.js";
 
 // Crear una reserva
 export const createBooking = async (booking) => {

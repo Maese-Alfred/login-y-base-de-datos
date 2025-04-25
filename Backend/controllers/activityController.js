@@ -1,5 +1,5 @@
-import * as activity from "../models/userActivityModels.js";
-import sql from "../config/db.js";
+import * as activity from "../models/activityModel.js";
+
 
 export const getAllActivities = async (req, res) => {
   try {

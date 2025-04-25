@@ -6,7 +6,6 @@ import{
     getPayMethodById,
     updatePayMethod,
     deletePayMethod,
-    updatePayMethod,
 } from '../controllers/payMethodController.js';
 
 const router = express.Router();
@@ -19,3 +18,4 @@ router.post('/', createPayMethod); // Create a new payment method
 router.put('/:id', updatePayMethod); // Update a payment method by ID
 router.delete('/:id', deletePayMethod); // Delete a payment method by ID
 
+export default router;

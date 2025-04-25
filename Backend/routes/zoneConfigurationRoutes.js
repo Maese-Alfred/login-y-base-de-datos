@@ -17,3 +17,5 @@ router.get('/', getAllZoneConfigurations);
 router.get('/:id', getZoneConfigurationById);
 router.put('/:id', updateZoneConfiguration);
 router.delete('/:id', deleteZoneConfiguration);
+
+export default router;

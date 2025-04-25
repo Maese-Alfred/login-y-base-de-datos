@@ -1,4 +1,4 @@
-import * as ProductCategory from "../models/productCategory.js";
+import * as ProductCategory from "../models/productCategoryModel.js";
 
 export const createProductCategory = async (req, res) => {
     const { nombre } = req.body;

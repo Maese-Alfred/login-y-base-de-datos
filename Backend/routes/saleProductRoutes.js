@@ -18,3 +18,5 @@ router.get('/:id', getSaleProductById);
 router.get('/sale/:id', getSaleProductBySaleId);
 router.put('/:id', updateSaleProduct);
 router.delete('/:id', deleteSaleProduct);
+
+export default router;

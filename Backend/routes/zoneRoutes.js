@@ -23,3 +23,4 @@ router.get('/:id', getZoneById);
 router.put('/:id', updateZone);
 router.delete('/:id', deleteZone);
 
+export default router;

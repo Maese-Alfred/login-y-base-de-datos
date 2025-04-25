@@ -19,3 +19,4 @@ router.post('/', createBookingStatus); // Create a new booking status
 router.put('/:id', updateBookingStatus); // Update a booking status by ID
 router.delete('/:id', deleteBookingStatus); // Delete a booking status by ID
 
+export default router;

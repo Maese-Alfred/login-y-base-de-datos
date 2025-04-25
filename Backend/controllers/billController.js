@@ -1,4 +1,4 @@
-import * as Bill from "../models/Bill.js";
+import * as Bill from "../models/billModel.js";
 
 
 export const getAllBills = async (req, res) => {

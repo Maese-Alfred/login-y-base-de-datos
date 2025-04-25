@@ -31,3 +31,8 @@ export const deleteKindUser = async (id) => {
   const result = await db.query("DELETE FROM TiposDeUsuarios WHERE id = $1 RETURNING *", [id]);
   return result.rows[0];
 };
+
+export const getKindUserByDescription = async (descripcion) => {
+  const result = await db.query("SELECT * FROM TiposDeUsuarios WHERE descripcion = $1", [descripcion]);
+  return result.rows[0];
+}
