@@ -1,5 +1,4 @@
 import * as user from "../models/userModels.js";
-import sql from "../config/db.js";
 
 export const getAllUsers = async (req, res) => {
   try {
@@ -40,9 +39,9 @@ export const getUserByUID = async (req, res) => {
 }
 
 export const createUser = async (req, res) => {
-  const { uid_firebase, usuario, rol } = req.body;
+  const { uid_firebase, nombre, correo, tipoUsuarioID } = req.body;
   try {
-    const newUser = await user.createUser({ uid_firebase, usuario, rol });
+    const newUser = await user.createUser({ uid_firebase, nombre, correo, tipoUsuarioID });
     res.status(201).json(newUser);
   } catch (error) {
     console.error("Error creating user:", error);
@@ -52,9 +51,9 @@ export const createUser = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   const { id } = req.params;
-  const { uid_firebase, usuario, rol } = req.body;
+  const { uid_firebase, nombre, correo, tipoUsuarioID } = req.body;
   try {
-    const updatedUser = await user.updateUser(id, { uid_firebase, usuario, rol });
+    const updatedUser = await user.updateUser(id, { uid_firebase, nombre, correo, tipoUsuarioID });
     if (!updatedUser) {
       return res.status(404).json({ message: "User not found" });
     }
@@ -72,38 +71,9 @@ export const deleteUser = async (req, res) => {
     if (!deletedUser) {
       return res.status(404).json({ message: "User not found" });
     }
-    res.status(200).json(deletedUser);
+    res.status(200).json({ message: "User deleted successfully" });
   } catch (error) {
     console.error("Error deleting user:", error);
     res.status(500).json({ message: "Error deleting user" });
   }
 }
-
-export const getUserRole = async (req, res) => {
-  const { uid } = req.params;
-  try {
-    const userRole = await user.getUserRole(uid);
-    if (!userRole) {
-      return res.status(404).json({ message: "User not found" });
-    }
-    res.status(200).json(userRole);
-  } catch (error) {
-    console.error("Error fetching user role:", error);
-    res.status(500).json({ message: "Error fetching user role" });
-  }
-}
-
-export const registerUser = async (req, res) => {
-  const { uid_firebase, usuario, rol } = req.body;
-  try {
-    const result = await sql`
-      INSERT INTO usuarios (uid_firebase, usuario, rol)
-      VALUES (${uid_firebase}, ${usuario}, ${rol})
-      RETURNING *`;  // Retorna los datos insertados
-
-    res.status(201).json({ message: "Usuario registrado correctamente en la base de datos", data: result });
-  } catch (error) {
-    console.error("Error al registrar el usuario:", error);
-    res.status(500).json({ message: "Error al registrar el usuario" });
-  }
-};
