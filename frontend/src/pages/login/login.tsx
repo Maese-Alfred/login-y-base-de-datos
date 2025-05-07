@@ -52,7 +52,7 @@ function Login() {
                 >Login</button>
             </div>
             <div className='login__info--container'>
-                <p>Don't have an account? <span className='register' onClick={() => navigate('/register')}>Register</span></p>
+                <p>Don't have an account? <span className='register' onClick={() => navigate('/create')}>Register</span></p>
             </div>
         </div>
         </div>
