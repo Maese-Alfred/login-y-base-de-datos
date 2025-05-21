@@ -1,23 +1,25 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import RightNavBar from "./rightNavBar";
+import { useLocation } from "react-router-dom";
+import "./navBar.css";
 
 
 function NavBar() {
-    const navigate = useNavigate();
-    
-    const handleClick = (path: string) => {
-        navigate(path);
-    };
-    
-    return (
-        <div className="navBar">
-        <button className="navBar__button" onClick={() => handleClick("/home")}>Home</button>
-        <button className="navBar__button" onClick={() => handleClick("/register-client")}>Registrar Cliente</button>
-        <button className="navBar__button" onClick={() => handleClick("/zone")}>Zonas</button>
-        <button className="navBar__button" onClick={() => handleClick("/booking")}>Reservas</button>
-        <button className="navBar__button" onClick={() => handleClick("/inventory")}>Inventario</button>
-        </div>
-    );
+  const titles: Record<string, string> = {
+    "/home": "HOME",
+    "/client": "CLIENTES",
+    "/zone": "ZONAS",
+    "/booking": "RESERVAS",
+    "/inventory": "INVENTARIO",
+  };
+  const location = useLocation();
+  const title = titles[location.pathname] || "PÁGINA";
+
+  return (
+    <div className="nav-wrapper">
+      <div className="nav-title">{title}</div>
+      <RightNavBar />
+    </div>
+  );
 }
 
-export default NavBar;
+export default NavBar

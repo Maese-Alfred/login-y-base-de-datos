@@ -1,0 +1,27 @@
+.nav-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-title {
+  width: 15rem;
+  height: 80px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBar {
+  background: linear-gradient(90deg, rgba(136, 123, 255, 0.62) 33.17%, rgba(82, 74, 153, 0.85) 73.56%);
+  height: 80px;
+  border-bottom-left-radius: 48px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1; /* esta línea es clave */
+}

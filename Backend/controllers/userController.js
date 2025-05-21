@@ -1,5 +1,6 @@
 import * as user from "../models/userModels.js";
 
+
 export const getAllUsers = async (req, res) => {
   try {
     const users = await user.getAllUsers();
@@ -39,14 +40,17 @@ export const getUserByUID = async (req, res) => {
 }
 
 export const createUser = async (req, res) => {
-  const { uid_firebase, nombre, correo, tipoUsuarioID } = req.body;
+  const { uid_firebase, nombre, correo } = req.body;
+  console.log("Datos a crear usuario:", { uid_firebase, nombre,correo });
+  console.log("Cuerpo enviado",req.body);
   try {
-    const newUser = await user.createUser({ uid_firebase, nombre, correo, tipoUsuarioID });
+    const newUser = await user.createUser({ uid_firebase, nombre, correo });
     res.status(201).json(newUser);
+    console.log("nuevo usuario",newUser);
   } catch (error) {
-    console.error("Error creating user:", error);
-    res.status(500).json({ message: "Error creating user" });
-  }
+  console.error("Error creating user:", error);
+  res.status(500).json({ message: "Error creating user", error: error.message });
+}
 }
 
 export const updateUser = async (req, res) => {

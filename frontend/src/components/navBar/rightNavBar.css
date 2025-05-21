@@ -1,0 +1,20 @@
+
+.navBar__buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.navBar__button {
+  background-color: #e9d5ff; /* tailwind's purple-200 */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.navBar__button:hover {
+  background-color: #d8b4fe; /* purple-300 */
+}

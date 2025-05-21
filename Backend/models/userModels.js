@@ -35,17 +35,16 @@ export const getUserByUID = async (uid) => {
   }
 };
 
-// Crear usuario nuevo
+
 export const createUser = async (user) => {
-  const { uid_firebase, nombre, correo, tipoUsuarioID } = user;
+  const { uid_firebase, nombre, correo } = user;
   try {
-    const result = await db.query(
-      `INSERT INTO usuarios (uid_firebase, nombre, correo, tipoUsuarioID)
-       VALUES ($1, $2, $3, $4)
-       RETURNING *`,
-      [uid_firebase, nombre, correo, tipoUsuarioID]
-    );
-    return result.rows[0];
+    const result = await db`
+      INSERT INTO usuarios (uid_firebase, nombre, correo)
+      VALUES (${uid_firebase}, ${nombre}, ${correo})
+      RETURNING *;
+    `;
+    return result[0];
   } catch (error) {
     console.error("Error creating user:", error);
     throw error;

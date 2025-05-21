@@ -1,0 +1,21 @@
+.edit-button,
+.delete-button {
+  background-color: #e9d5ff; /* tailwind's purple-200 */
+  border: none;
+
+  border-radius: 15px;
+  padding: 5px 10px;
+  margin: 4px 10px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.edit-button:hover {
+  background-color: #5dc79e; /* Green */
+  color: rgb(0, 0, 0);
+}
+
+.delete-button:hover {
+  background-color: #ff4d4d; /* Red */
+  color: rgb(0, 0, 0);
+}

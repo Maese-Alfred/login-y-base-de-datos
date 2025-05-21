@@ -1,0 +1,82 @@
+.register-container {
+  width: 400px;
+  height: 476px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(40px);
+  border-radius: 2.5rem;
+  background: linear-gradient(
+    54.4deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.4)
+  );
+  border: 1px solid rgba(33, 0, 110, 0.54);
+  box-sizing: border-box;
+  margin-top: 10vh;
+}
+
+.register-title {
+  margin-left: 40px;
+  margin-top: 4rem;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  text-align: left;
+}
+
+.register-input-field {
+  width: 80%;
+  height: 2.8rem;
+  border: none;
+  margin-left: 40px;
+  margin-top: 1.5rem;
+  border-radius: 2rem;
+  padding-left: 0.5rem;
+  left: 3.25rem;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(
+    -88.09deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  );
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(40px);
+  outline: none;
+}
+
+.register-input-field::placeholder {
+  color: #000;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.register-button {
+  width: 60%;
+  height: 2.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 2rem;
+  margin-left: 20%;
+  margin-top: 2rem;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(136, 123, 255, 0.62) 33.17%,
+    rgba(82, 74, 153, 0.85) 73.56%
+  );
+  cursor: pointer;
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+}

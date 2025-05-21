@@ -1,8 +1,8 @@
 export interface User {
-    id: number;
+    id?: number;
     uid_firebase: string;
     usuario: string;
-    rol: 'admin' | 'user' | 'guest';
+    rol?: 'admin' | 'user' | 'guest';
   }
 
 export interface LoginFormData {
