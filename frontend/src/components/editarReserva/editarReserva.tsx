@@ -126,7 +126,6 @@ function EditarReserva({
                             <option value="Pendiente">Pendiente</option>
                             <option value="Confirmada">Confirmada</option>
                             <option value="Cancelada">Cancelada</option>
-                            {/* Asegúrate de que estos valores coincidan con los de tu backend */}
                         </select>
                     </div>
                     <div className="form-group">

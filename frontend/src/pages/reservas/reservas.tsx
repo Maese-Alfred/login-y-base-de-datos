@@ -16,7 +16,7 @@ type Reserva = {
   hora: string;
   estadoReserva: string;
   zonaCampoTiroID: number;
-    zonaCampoTiro: string;
+  zonaCampoTiro: string;
   montoPagado: number;
 };
 
@@ -57,7 +57,7 @@ function Reservas() {
 
       const reservasTransformadas: Reserva[] = response.data.map((r: ApiReserva) => ({
         id: r.id,
-        clienteid: 0, // si no te llega desde la API, puedes dejarlo en 0 o ajustarlo
+        clienteid: 0, 
         cliente: r.cliente,
         fecha: r.fecha,
         hora: r.hora,

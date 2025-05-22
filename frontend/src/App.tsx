@@ -4,6 +4,7 @@ import Home from "./pages/Home/home";
 import ClientePage from "./pages/cliente/clliente";
 import Zona from  "./pages/zonas/zona";
 import Reservas from "./pages/reservas/reservas";
+import Inventario from "./pages/inventario/inventario";
 
 import './App.css';
 
@@ -16,6 +17,7 @@ function App() {
       <Route path="/client" element={<ClientePage />} />
       <Route path="/zone" element={<Zona />} />
       <Route path="/reservas" element={<Reservas />} />
+      <Route path="/inventario" element={<Inventario />} />
     </Routes>
   );
 }

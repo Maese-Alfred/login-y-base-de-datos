@@ -1,10 +1,11 @@
 import * as Product from "../models/productModel.js";
 
-
 export const createProduct = async (req, res) => {
-    const { nombreProducto, cantidad, precio, categoriaid } = req.body;
+    const { nombreProducto, cantidad, precio, categoriaId } = req.body;
+    console.log("Creating product with values:", { nombreProducto, cantidad, precio, categoriaId });
+    console.log("Request body:", req.body);
     try {
-        const newProduct = await Product.createProduct({ nombreProducto, cantidad, precio, categoriaid });
+        const newProduct = await Product.createProduct({ nombreProducto, cantidad, precio, categoriaId });
         res.status(201).json(newProduct);
     } catch (error) {
         console.error("Error creating product:", error);
@@ -38,6 +39,9 @@ export const getProductById = async (req, res) => {
 export const updateProduct = async (req, res) => {
     const { id } = req.params;
     const { nombreProducto, cantidad, precio, categoriaid } = req.body;
+    console.log("Updating product with ID:", id);
+    console.log("New values:", { nombreProducto, cantidad, precio, categoriaid });
+    
     try {
         const updatedProduct = await Product.updateProduct(id, { nombreProducto, cantidad, precio, categoriaid });
         if (!updatedProduct) {
@@ -61,5 +65,15 @@ export const deleteProduct = async (req, res) => {
     } catch (error) {
         console.error("Error deleting product:", error);
         res.status(500).json({ message: "Error deleting product" });
+    }
+}
+
+export const getProductsCategories = async (req, res) => {
+    try {
+        const categories = await Product.getProducstCategories();
+        res.status(200).json(categories);
+    } catch (error) {
+        console.error("Error fetching product categories:", error);
+        res.status(500).json({ message: "Error fetching product categories" });
     }
 }

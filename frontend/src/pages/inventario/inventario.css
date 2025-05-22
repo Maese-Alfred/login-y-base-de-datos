@@ -1,0 +1,12 @@
+.inventario-content{
+    display: flex;
+    flex-direction: row;
+    min-height: 40vh;
+}
+
+.inventario-table-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem;
+}
