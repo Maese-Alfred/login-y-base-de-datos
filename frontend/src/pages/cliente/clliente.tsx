@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import api from "../../services/axios";
 import ButtonBar from "../../components/botones/buttonBar";
 import EditarCliente from "../../components/editarCliente/editarCliente";
+import RegistrarCliente from "../../components/registrarCliente/registrarCliente";
+import "./cliente.css";
 
 type Cliente = {
     id: number;
@@ -57,25 +59,39 @@ function ClientePage() {
         }
     };
 
+    const handleRowClick = (cliente: Cliente) => {
+        if (clienteSeleccionado && clienteSeleccionado.id === cliente.id) {
+            setClienteSeleccionado(null);
+            return;
+        }
+        setClienteSeleccionado(cliente);
+    };
+
     return (
         <div className="home">
             <NavBar />
-            <h1>Bienvenido a la página de Clientes</h1>
-            <p>Esta es la página de clientes de la aplicación.</p>
-
+            <div className="clientes-content">
+            <RegistrarCliente
+                cliente={{ id: 0, nombre: "", apellido: "", telefono: "", correo: "" }}
+                setCliente={setClienteEnEdicion}
+                setClientes={setClientes}
+                />
+            <div className="clientes-table-content">
             <Tabla<Cliente>
                 columns={columnas}
                 data={clientes}
-                onRowClick={(cliente) => setClienteSeleccionado(cliente)}
+               onRowClick={handleRowClick} 
                 selectedRow={clienteSeleccionado}
             />
-
-            {clienteSeleccionado && (
+             {clienteSeleccionado && (
                 <ButtonBar
                     onEdit={() => editarCliente(clienteSeleccionado)}
                     onDelete={() => eliminarCliente(clienteSeleccionado.id)}
                 />
             )}
+            </div>
+            </div>
+           
 
             {clienteEnEdicion && (
     <EditarCliente

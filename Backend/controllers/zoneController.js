@@ -66,26 +66,24 @@ export const deleteZone = async (req, res) => {
     }
 }
 
-export const getZonesWithConfiguration = async (req, res) => {
-    try {
-        const zones = await Zone.getZonesWithConfiguration();
-        res.status(200).json(zones);
-    } catch (error) {
-        console.error("Error fetching zones with configuration:", error);
-        res.status(500).json({ message: "Error fetching zones with configuration" });
-    }
-}
+export const getZoneDisponibilityWithConfigurationByDate = async (req, res) => {
+    const { date, id } = req.params;
 
-export const getZonesDisponibilityByDate = async (req, res) => {
-    const { fecha } = req.params;
+    if (!date) {
+        return res.status(400).json({ message: "La fecha es obligatoria." });
+    }
+    if (!id) {
+        return res.status(400).json({ message: "El ID es obligatorio." });
+    }
+
     try {
-        const zones = await Zone.getZonesDisponibilityByDate(fecha);
+        const zones = await Zone.getZoneDisponibilityWithConfigurationByDate(date, id);
         res.status(200).json(zones);
     } catch (error) {
         console.error("Error fetching zones availability by date:", error);
         res.status(500).json({ message: "Error fetching zones availability by date" });
     }
-}
+};
 
 export const getZonesWithBooking = async (req, res) => {
     const { fecha } = req.params;
@@ -97,3 +95,4 @@ export const getZonesWithBooking = async (req, res) => {
         res.status(500).json({ message: "Error fetching zones with booking" });
     }
 }
+

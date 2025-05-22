@@ -1,3 +1,10 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra la tabla y la paginación */
+  width: 100%; /* Ajusta el ancho según tu diseño */
+
+}
 .table {
   width: 100%;
   border-radius: 4px; /* Bordes redondeados */
@@ -9,6 +16,7 @@
   color: #fff;
   max-height:  45vh; ; 
   font-family: Inter; /* Familia de fuente */
+  margin: 1rem;
 }
 
 /* Encabezado de la tabla */
@@ -17,7 +25,10 @@
 }
 
 .table-body .table-row.selected {
-  background-color: #ff1818 !important;
+  background:linear-gradient(90deg,
+   rgba(136, 123, 255, 0.62) 33.17%,
+    rgba(82, 74, 153, 0.85) 73.56%
+  ) !important;
 }
 /* Filas del encabezado y del cuerpo (th y td) */
 .table-row {
@@ -96,3 +107,36 @@
   background-color: rgba(255, 255, 255, 0); /* Transparente para filas impares */
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* Espacio entre los botones de paginación */
+  margin-top: 10px;
+}
+
+.pagination-button {
+  background-color: linear-gradient(
+    90deg,
+    rgba(136, 123, 255, 0.62) 33.17%,
+    rgba(82, 74, 153, 0.85) 73.56%
+  );
+  color: white;
+  border: none;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.pagination-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination-button.active {
+  background-color: #693dee;
+}

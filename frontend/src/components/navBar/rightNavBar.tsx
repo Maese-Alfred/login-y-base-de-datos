@@ -16,7 +16,7 @@ function RightNavBar() {
         <button className="navBar__button" onClick={() => handleClick("/home")}>Home</button>
         <button className="navBar__button" onClick={() => handleClick("/client")}>Clientes</button>
         <button className="navBar__button" onClick={() => handleClick("/zone")}>Zonas</button>
-        <button className="navBar__button" onClick={() => handleClick("/booking")}>Reservas</button>
+        <button className="navBar__button" onClick={() => handleClick("/reservas")}>Reservas</button>
         <button className="navBar__button" onClick={() => handleClick("/inventory")}>Inventario</button>
         </div>
         </div>

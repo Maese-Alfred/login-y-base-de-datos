@@ -5,15 +5,12 @@ import activityRoutes from './routes/activityRoutes.js';
 import billRoutes from './routes/billRoutes.js'; 
 import billStatusRoutes from './routes/billStatusRoutes.js'; 
 import bookingRoutes from './routes/bookingRoutes.js'; 
-import bookingStatusRoutes from './routes/bookingStatusRoutes.js'; 
 import clientRoutes from './routes/clientRoutes.js';
 import payMethodRoutes from './routes/payMethodRoutes.js';
 import productCategoryRoutes from './routes/productCategoryRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import saleRoutes from './routes/saleRoutes.js';
 import saleProductRoutes from './routes/saleProductRoutes.js';
-import zoneDisponibilityRoutes from './routes/zoneDisponibility.js'; 
-import zoneConfigurationRoutes from './routes/zoneConfigurationRoutes.js'; 
 import zoneRoutes from './routes/zoneRoutes.js'; 
 import userRoutes from './routes/userRoutes.js'; 
 
@@ -31,15 +28,12 @@ app.use('/api/activities', activityRoutes);
 app.use('/api/bills', billRoutes);
 app.use('/api/bill-status', billStatusRoutes);
 app.use('/api/bookings', bookingRoutes);
-app.use('/api/booking-status', bookingStatusRoutes);
 app.use('/api/clients', clientRoutes);
 app.use('/api/pay-methods', payMethodRoutes);
 app.use('/api/product-categories', productCategoryRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/sales', saleRoutes);
 app.use('/api/sale-products', saleProductRoutes);
-app.use('/api/zone-disponibility', zoneDisponibilityRoutes);
-app.use('/api/zone-configurations', zoneConfigurationRoutes);
 app.use('/api/zones', zoneRoutes);
 
 

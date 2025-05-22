@@ -1,0 +1,171 @@
+.modal-overlay {
+  position: fixed; /* Fija la posición en la ventana del navegador */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ocupa el 100% del ancho del viewport */
+  height: 100vh; /* Ocupa el 100% de la altura del viewport */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente y oscuro */
+  display: flex; /* Para centrar el contenido de la modal */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  z-index: 1000; /* Asegura que la modal esté por encima de otros elementos */
+}
+
+/* Contenido de la ventana modal */
+.modal-content {
+   background: linear-gradient(
+    54.4deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.4)
+  );
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(40px);
+  padding: 2.5rem; /* Relleno interno */
+  border-radius: 8px; /* Bordes redondeados */
+  position: relative; /* Para posicionar la "X" de cierre */
+  max-width: 500px; /* Ancho máximo para la modal */
+  width: 90%; /* Ancho responsivo */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho/alto */
+  animation: fadeIn 0.3s ease-out; /* Animación de entrada */
+}
+
+/* Título de la modal */
+.modal-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  font-size: 1.8rem;
+}
+
+/* Botón de cierre "X" */
+.modal-close-button {
+  position: absolute; /* Posicionamiento absoluto dentro de .modal-content */
+  top: 10px; /* Distancia desde la parte superior */
+  right: 15px; /* Distancia desde la parte derecha */
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  font-size: 1.8rem; /* Tamaño grande para la "X" */
+  cursor: pointer;
+  color: #000000; /* Color de la "X" */
+  transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+  color: #e74c3c; /* Color al pasar el ratón */
+}
+
+/* Estilos para los grupos de formulario dentro de la modal */
+.modal-form .form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form .form-group label {
+  color: #000;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.modal-form .form-group input {
+   width: 100%;
+  height: 2.8rem;
+  border: none;
+  margin-top: 0.2rem;
+  border-radius: 2rem;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  background: linear-gradient(
+    -88.09deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  );
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(40px);
+  outline: none;
+}
+
+.modal-form .form-group input:focus {
+  outline: none;
+  border-color: linear-gradient(
+    90deg,
+    rgba(136, 123, 255, 0.62) 33.17%,
+    rgba(82, 74, 153, 0.85) 73.56%);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Contenedor de acciones (botones) */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+  gap: 1rem; /* Espacio entre los botones */
+  margin-top: 1.5rem;
+}
+
+/* Estilos de botones */
+.modal-button {
+  width: 60%;
+  height: 2.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 2rem;
+  margin-left: 0.1rem;
+  margin-top: 2rem;
+  color: white;
+  /* Degradado original para el botón */
+  background: linear-gradient(
+    90deg,
+    rgba(136, 123, 255, 0.62) 33.17%,
+    rgba(82, 74, 153, 0.85) 73.56%
+  );
+  cursor: pointer;
+  box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: background 0.3s ease; /* Añade una transición suave para el cambio de fondo */
+}
+
+/* El botón principal (Guardar) utiliza el degradado base y puedes oscurecerlo o cambiarlo en hover */
+.modal-button.primary:hover {
+  /* Cambia el degradado a uno más oscuro o diferente */
+  background: linear-gradient(
+    90deg,
+    rgba(164, 248, 131, 0.62) 33.17%, /* Valores ligeramente más oscuros */
+    rgba(118, 255, 164, 0.85) 73.56%
+  );
+  color: #000000;
+}
+
+/* El botón secundario (Cancelar) también necesita un degradado si quieres mantener la estética */
+.modal-button.secondary {
+  /* Define un degradado para el botón secundario si quieres que se vea similar */
+  background: linear-gradient(
+    90deg,
+    rgba(108, 117, 125, 0.62) 33.17%, /* Ejemplo: gris oscuro */
+    rgba(86, 92, 97, 0.85) 73.56%
+  );
+}
+
+.modal-button.secondary:hover {
+  /* Cambia el degradado a uno más oscuro o diferente para el botón secundario */
+  background: linear-gradient(
+    90deg,
+    rgba(88, 95, 102, 0.62) 33.17%, /* Valores ligeramente más oscuros */
+    rgba(69, 74, 78, 0.85) 73.56%
+  );
+  /* background-color: #5a6268; <--- ELIMINA ESTO */
+}
+
+/* Animación de entrada (esta está bien) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

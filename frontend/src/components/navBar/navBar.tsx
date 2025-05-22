@@ -8,8 +8,8 @@ function NavBar() {
     "/home": "HOME",
     "/client": "CLIENTES",
     "/zone": "ZONAS",
-    "/booking": "RESERVAS",
-    "/inventory": "INVENTARIO",
+    "/reservas": "RESERVAS",
+    "/inventario": "INVENTARIO",
   };
   const location = useLocation();
   const title = titles[location.pathname] || "PÁGINA";

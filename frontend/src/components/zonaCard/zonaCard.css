@@ -1,0 +1,47 @@
+.zona-card {
+  display: grid; /* Habilita el modo de cuadrícula */
+  grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual ancho */
+  gap: 20px; /* Espacio entre los elementos de la cuadrícula */
+  padding: 20px; /* Un poco de padding alrededor de la cuadrícula */
+  justify-content: center; /* Centra los ítems si no ocupan todo el ancho */
+  align-items: start; /* Alinea los ítems al inicio de la fila */
+  width: 100%; /* Asegúrate de que ocupe el ancho disponible */
+  max-width: 1200px; /* O el ancho máximo que desees para tu cuadrícula */
+  margin: 0 auto; /* Para centrar el contenedor de la cuadrícula si tiene un max-width */
+}
+
+.zona-card-item {
+  /* Estilos para cada tarjeta individual */
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Asegúrate de que las tarjetas tengan una altura mínima si es necesario, o se adapten al contenido */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Para empujar el contenido hacia arriba/abajo si las alturas varían */
+}
+
+.zona-card-item h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.zona-card-item p {
+  color: #666;
+}
+
+/* Opcional: Responsive Design */
+@media (max-width: 992px) {
+  .zona-card {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .zona-card {
+    grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+  }
+}
